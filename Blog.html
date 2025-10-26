@@ -3,6 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joy collection — Marketplace & Portfolio Desain Kreatif Profesional</title>
+    <meta name="description" content="Bangun branding dan website profesional bersama Joy collection. Marketplace untuk menemukan dan memamerkan desain kreatif terbaik dari para profesional muda Indonesia.">
+    <meta name="keywords" content="desain, marketplace, portofolio, branding, logo, web development, packaging, joy collection">
+    <link rel="stylesheet" href="blog.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="gambar/iconjoy.png"> 
+</head>
+<body class="light-mode">
+    
+    <header class="navbar">
+        <div class="logo">
+            <img src="gambar/logo joy.png" alt="Joy collection Logo"> 
+        </div>
+        <nav class="menu-center">
+            <a href="file:///E:/joy_collection_site/index.html"class="btn">Home</a>
+            <a href="file:///E:/joy_collection_site/navbar/karya.html"class="btn">Karya</a>
+            <a href="file:///E:/joy_collection_site/navbar/Blog.html" class="btn">Blog</a>
+            <a href="file:///E:/joy_collection_site/navbar/services.html"class="btn">Services</a>
+            <a href="file:///E:/joy_collection_site/navbar/contact.html" class="btn">Contact</a>
+        </nav>
+        <div class="actions">
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website dengan Login Google di Header</title>
+    
+    <meta name="google-signin-client_id" content="101257786621-lcgd5dome8mujpc3pmu8952dmallbtu7.apps.googleusercontent.com">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: plus jakarta sans, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .login-container {
+            /* Pastikan kontainer memiliki ruang yang cukup */
+            display: flex;
+            align-items: center;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-info img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .user-info span {
+            font-size: 0.9em;
+        }
+
+        /* Styling untuk tombol/div setelah login (opsional) */
+        #signout_button {
+            cursor: pointer;
+            background-color: #fb3654;
+            color: white;
+            border: 1px solid #3e4243;
+            padding: 8px 15px;
+            border-radius: 50px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="login-container">
+            <div id="g_id_onload"
+                 data-client_id="101257786621-lcgd5dome8mujpc3pmu8952dmallbtu7.apps.googleusercontent.com"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false">
+            </div>
+            
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-size="large"
+                 data-logo_alignment="left">
+            </div>
+
+            <div id="profile_info" class="user-info" style="display: none;">
+                <img id="user_picture" alt="Foto Profil">
+                <span id="user_name"></span>
+                <button id="signout_button">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        // Fungsi ini dipanggil setelah pengguna berhasil login
+        function handleCredentialResponse(response) {
+            // response.credential adalah ID Token (JWT)
+            const idToken = response.credential;
+            
+            // Untuk website statis/frontend, Anda harus mendecode JWT
+            // untuk mendapatkan info profil dasar tanpa backend.
+            const decodedToken = decodeJwtResponse(idToken);
+
+            const profileContainer = document.getElementById('profile_info');
+            const loginButton = document.querySelector('.g_id_signin');
+
+            // Sembunyikan tombol login
+            loginButton.style.display = 'none';
+            
+            // Tampilkan info pengguna
+            document.getElementById('user_name').textContent = decodedToken.name;
+            document.getElementById('user_picture').src = decodedToken.picture;
+            profileContainer.style.display = 'flex';
+
+            console.log("Login Berhasil!");
+            console.log("Nama: " + decodedToken.name);
+            console.log("Email: " + decodedToken.email);
+        }
+
+        // Fungsi sederhana untuk mendecode ID Token (ID Token adalah JWT)
+        function decodeJwtResponse(token) {
+            var base64Url = token.split('.')[1];
+            var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+
+            return JSON.parse(jsonPayload);
+        }
+
+        // Fungsi Logout
+        document.getElementById('signout_button').onclick = function() {
+            google.accounts.id.disableAutoSelect(); // Menonaktifkan login otomatis berikutnya
+            
+            // Sembunyikan info pengguna
+            document.getElementById('profile_info').style.display = 'none';
+            // Tampilkan kembali tombol login
+            document.querySelector('.g_id_signin').style.display = 'block';
+
+            console.log('Pengguna telah logout.');
+        };
+    </script>
+</body>
+</html>
+        </div>
+    </header>
+
+        <section id="marketplace" class="marketplace-section reveal-on-scroll">
+            <div class="container-pusat">
+    <h2 class="judul-utama">
+        Updete Terbaru Tentang Joy
+    </h2>
+</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Diskusi Komunitas</title>
+    <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page Diskusi</title>
     <link rel="stylesheet" href="style_diskusi.css">
 </head>
@@ -15,7 +197,6 @@
                 <button class="notification-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
                 </button>
-                <button class="start-discussion-btn">Start a discussion</button>
             </div>
         </header>
 
@@ -24,34 +205,25 @@
                 <div class="user-info">
                     <img src="https://via.placeholder.com/32/1a73e8/ffffff?text=G" alt="GDG Logo" class="user-avatar">
                     <div class="user-meta">
-                        <span class="username">GDG Jakarta ID</span>
-                        <span class="time">19 hari yang lalu</span>
+                        <span class="username">Joy</span>
+                        <span class="time">26 October 2025</span>
                     </div>
                 </div>
-                <button class="pin-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.77L18.18 21L16.5 13.73L22 8.78L14.73 8.16L12 2L9.27 8.16L2 8.78L7.5 13.73L5.82 21L12 17.77Z"/></svg>
-                    Pinned
-                </button>
             </div>
 
-            <h2 class="thread-title">GDG Jakarta FAQ & Payment Policy</h2>
+            <h2 class="thread-title">Halo selamat datang</h2>
             <p class="thread-body">
-                Hi Jakarta Geeks! To ensure clarity and prevent any misunderstandings regarding our events, payments, and official communications, please carefully read our official FAQ and Payment Policy below. Official Communication ChannelsAll official information and communication from GDG Jakarta will come from our verified platforms only. Email: info@gdgjak...
+                Yuk komen dulu, kita cek ombak dulu
             </p>
-            
-            <div class="thread-actions">
-                <span class="like-btn">+</span>
-            </div>
 
             <div class="thread-footer">
-                <span class="comment-count">0 comments</span>
+
                 <a href="#disqus_thread" class="comment-link">Comment</a>
                 <span class="options-menu">...</span>
             </div>
         </article>
         
         <section class="disqus-area">
-            <h3>Interaksi & Balasan Komentar</h3>
             <div id="disqus_thread"></div>
         </section>
 
@@ -59,7 +231,7 @@
 
     <script>
         /**
-        * PENTING: EDIT DAN HILANGKAN TANDA KOMENTAR (/* dan */ 
+        * PENTING: EDIT DAN HILANGKAN TANDA KOMENTAR (/* dan */
         var disqus_config = function () {
             this.page.url = window.location.href;  
             this.page.identifier = 'unique_id_halaman_diskusi_123'; // Ganti dengan ID unik
@@ -74,5 +246,30 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
+</body>
+</html>
+        
+</div>
+</section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="gambar/logo joy.png" alt="Joy collection Logo">
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/raadiyan?igsh=dGFhcjZiODc0Mng5">Instagram</a>
+                <a href="https://wa.me/6289520617743?text=halo Joy">Whatsapp</a>
+                <a href="https://joymerahgray@gmail.com">Gmail</a>
+            </div>
+        </div>
+        <div class="footer-bottom-text">
+            ©2025 Joy collection — Marketplace & Portfolio Desain Kreatif Indonesia.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-code.js" crossorigin="anonymous"></script> 
 </body>
 </html>
