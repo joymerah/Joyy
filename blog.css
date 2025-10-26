@@ -1,0 +1,587 @@
+/* Variabel Warna WhatsApp/Joy Collection */
+:root {
+    /* Warna WhatsApp API */
+    --color-whatsapp-green-grad-start: #fb3654; 
+    --color-whatsapp-green-grad-end: #fb3654;
+    --color-whatsapp-dark-footer: #222e35;
+    
+    /* Warna Brand Joy Collection */
+    --color-primary: #ffffff; /* Putih (untuk background atau teks) */
+    --color-secondary: #fb3654; /* Merah Muda */
+    --color-text-dark: #3e4243; /* Abu-abu Tua */
+    --color-cta-green: #3e4243; /* Hijau CTA WhatsApp */
+    --color-cta-green-hover: #fb3654; 
+    
+    /* Mode Gelap */
+    --dark-bg: #111b21;
+    --dark-text: #e9edef;
+    --dark-card-bg: #222e35;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: var(--color-primary);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* ---------------------------------- */
+/* Dark Mode */
+/* ---------------------------------- */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+body.dark-mode .navbar {
+    background-color: var(--dark-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+body.dark-mode .navbar a, 
+body.dark-mode .actions button {
+    color: var(--dark-text);
+}
+body.dark-mode .design-card,
+body.dark-mode .service-card {
+    background-color: var(--dark-card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* ... Tambahkan gaya dark mode untuk semua elemen ... */
+
+
+/* ---------------------------------- */
+/* 1. Navbar */
+/* ---------------------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.logo img {
+    height: 50px; /*url(logo joy newbaru.png)*/
+}
+.menu-center a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    margin: 0 15px;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+}
+.menu-center a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-secondary);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+.menu-center a:hover::after {
+    width: 100%;
+}
+.actions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 10px;
+    color: var(--color-text-dark);
+}
+
+/* ---------------------------------- */
+/* 2. Hero Section */
+/* ---------------------------------- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.7rem 5%; /* bg merah page merah */
+    /* Gradient WhatsApp */
+    background: linear-gradient(135deg, var(--color-whatsapp-green-grad-start) 0%, var(--color-whatsapp-green-grad-end) 100%); 
+    color: var(--color-primary);
+    min-height: 80vh;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.hero-content-kiri {
+    max-width: 50%;
+}
+.hero-content-kiri h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.hero-content-kiri p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+.hero-content-kanan img {
+    max-width: 100%;
+    height: auto;
+    /* Efek 3D ringan */
+    transform: perspective(1000px) rotateY(0%); 
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.2));
+}
+
+/* Tombol CTA Gaya WhatsApp API */
+.whatsapp-style-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 15px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.cta-primary {
+    background-color: var(--color-cta-green);
+    color: var(--color-primary);
+}
+.cta-secondary {
+    background-color: var(--color-primary);
+    color: var(--color-cta-green);
+    border: 1px solid var(--color-cta-green);
+}
+.cta-primary:hover {
+    background-color: var(--color-cta-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ffffff;
+}
+.cta-secondary:hover {
+    background-color: var(--color-cta-green);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ffffff;
+}
+
+/* ---------------------------------- */
+/* 3. Update terbaru teNTANG Joy */
+/* ---------------------------------- */
+/* Animasi untuk scroll reveal akan ditambahkan di JS */
+
+/* Styling untuk Container (Menggantikan 'text-center space-y-4 flex flex-col items-center') */
+.container-pusat {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memusatkan elemen horizontal */
+    text-align: center; /* Memastikan teks di dalamnya terpusat */
+    gap: 16px; /* Menggantikan 'space-y-4' (asumsi 16px) */
+    padding: 20px;
+    font-family: "Plus Jakarta Sans", sans-serif; /* Opsional: tentukan font */
+}
+
+/* Styling untuk Judul Utama (Menggantikan 'h2' dengan semua properti kompleks) */
+.judul-utama {
+    /* Ukuran & Tata Letak */
+    width: 83.333333%; /* Menggantikan 'w-5/6' */
+    max-width: fit-content; /* Untuk memastikan width mengecil di layar besar, menggantikan 'md:w-fit' */
+    padding: 16px; /* Menggantikan 'p-4' */
+    
+    /* Dekorasi Box */
+    border: 1px solid #3f3f46; /* Menggantikan 'border border-zinc-800' */
+    background-color: #ff5a72; /* Menggantikan 'bg-sky-200' */
+    border-radius: 12px; /* Menggantikan 'rounded-xl' */
+    
+    /* Efek & Transisi */
+    position: relative; /* Wajib untuk penempatan ::before/::after */
+    transition: all 0.3s ease-in-out; /* Menggantikan 'transition-all' dan 'hover:px-8' */
+}
+
+/* Efek Hover untuk Judul */
+.judul-utama:hover {
+    padding-left: 32px; /* Menggantikan 'hover:px-8' (asumsi 32px = 8 * 4px) */
+    padding-right: 32px; /* Menggantikan 'hover:px-8' (asumsi 32px = 8 * 4px) */
+}
+
+/* ---------------------------------------------------- */
+/* Dekorasi Kiri (Menggantikan '::before' yang kompleks) */
+/* ---------------------------------------------------- */
+.judul-utama::before {
+    content: '';
+    position: absolute;
+    width: 28px; /* Menggantikan 'w-7' (asumsi 28px = 7 * 4px) */
+    height: 100%;
+    border: 1px solid #3f3f46;
+    left: -28px; /* Menggantikan '-left-7' */
+    top: 0;
+    border-radius: 12px;
+    background-color: #fb3654; /* Menggantikan 'bg-sky-400' */
+    transition: all 0.3s ease-in-out; /* Menggantikan 'transition-all' */
+    z-index: -1; /* Pastikan dekorasi di belakang teks h2 */
+}
+
+/* Efek Hover pada Dekorasi Kiri */
+.judul-utama:hover::before {
+    height: 66.6666%; /* Menggantikan 'hover:before:h-2/3' */
+    top: 50%; /* Pindahkan ke tengah agar efeknya dari bawah ke atas */
+    transform: translateY(-50%);
+}
+
+/* ----------------------------------------------------- */
+/* Dekorasi Kanan (Menggantikan '::after' yang kompleks) */
+/* ----------------------------------------------------- */
+.judul-utama::after {
+    content: '';
+    position: absolute;
+    width: 28px; /* Menggantikan 'w-7' */
+    height: 100%;
+    border: 1px solid #3f3f46;
+    right: -28px; /* Menggantikan '-right-7' */
+    bottom: 0;
+    border-radius: 12px;
+    background-color: #fb3654; /* Menggantikan 'bg-sky-400' */
+    transition: all 0.3s ease-in-out; /* Menggantikan 'transition-all' */
+    z-index: -1; /* Pastikan dekorasi di belakang teks h2 */
+}
+
+/* Efek Hover pada Dekorasi Kanan */
+.judul-utama:hover::after {
+    height: 66.6666%; /* Menggantikan 'hover:after:h-2/3' */
+    bottom: 50%; /* Pindahkan ke tengah agar efeknya dari atas ke bawah */
+    transform: translateY(50%);
+}
+
+/* Styling untuk teks lain */
+.sub-judul {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.tanggal {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* Media Query untuk Layar yang Lebih Besar (Opsional, untuk responsif) */
+@media (min-width: 768px) {
+    .judul-utama {
+        width: fit-content; /* Menggantikan 'md:w-fit' */
+    }
+}
+/* Kartu Diskusi (Thread) */
+/* Kartu Diskusi (Thread) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
+}
+
+.discussion-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Header Diskusi --- */
+.discussion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.discussion-header h1 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #202124;
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.notification-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #5f6368;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.start-discussion-btn {
+    background-color: #1a73e8; /* Warna Biru */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* --- Kartu Thread Utama --- */
+.thread-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.thread-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: 600;
+    color: #202124;
+    font-size: 0.95em;
+}
+
+.time {
+    font-size: 0.8em;
+    color: #5f6368;
+}
+
+.thread-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #202124;
+    margin: 0 0 10px 0;
+}
+
+.thread-body {
+    font-size: 1em;
+    color: #5f6368;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.thread-actions {
+    padding-left: 42px; /* Sejajarkan dengan tepi teks */
+    margin-bottom: 15px;
+}
+
+.like-btn {
+    font-size: 1.5em;
+    color: #5f6368;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.thread-footer {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    font-size: 0.9em;
+    color: #5f6368;
+}
+
+.comment-link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- Area Disqus --- */
+.disqus-area {
+    margin-top: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.disqus-area h3 {
+    font-size: 1.4em;
+    color: #202124;
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* Styling Global dan Container */
+body {
+    background-color: #ffffff; /* Latar belakang abu-abu muda */
+    padding: 0px; /* JANGAN DIHAPUS KOCAK */
+}
+
+/* ---------------------------------- */
+/* Contact Form */
+/* ---------------------------------- */
+.contact-section {
+    padding: 4rem 5%;
+    text-align: center;
+    background-color: #fb3654;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+body.dark-mode .contact-section {
+    background-color: var(--dark-card-bg);
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+}
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    border-color: #444;
+}
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-cta-green);
+    outline: none;
+}
+.contact-form .cta-primary {
+    justify-self: end;
+    width: auto;
+}
+
+/* ---------------------------------- */
+/* 6. Footer */
+/* ---------------------------------- */
+.footer {
+    background-color: var(--color-whatsapp-dark-footer); /* Hijau Tua ala Footer WhatsApp API */
+    color: #aebac1;
+    padding: 3rem 5%;
+    text-align: center;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #fb3654;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.footer-logo img {
+    height: 50px;
+}
+.social-links a {
+    color: #aebac1;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: var(--color-cta-green-hover);
+}
+.social-links i {
+    margin-right: 5px;
+}
+.footer-bottom-text {
+    font-size: 0.9rem;
+}
+
+/* ---------------------------------- */
+/* Mobile First Responsiveness */
+/* ---------------------------------- */
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        font-family: "Plus Jakarta Sans", sans-serif;
+    }
+    .hero-content-kiri,
+    .hero-content-kanan {
+        max-width: 100%;
+        margin-bottom: 3rem;
+    }
+    .hero-content-kanan img {
+        transform: none; /* Hilangkan efek 3D di mobile */
+    }
+    .hero-content-kiri h1 {
+        font-size: 2.5rem;
+    }
+    .menu-center {
+        display: none; /* Sembunyikan menu navigasi di mobile */
+    }
+    .design-grid,
+    .services-grid {
+        grid-template-columns: 1fr; /* Satu kolom di mobile */
+    }
+    .portfolio-item.clean-style {
+        flex-direction: column;
+    }
+    .item-media,
+    .item-description {
+        max-width: 100%;
+    }
+    .item-media img {
+        height: 250px;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+    .social-links {
+        margin-top: 20px;
+    }
+}
+
+/*Blog*/
