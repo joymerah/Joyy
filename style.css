@@ -561,7 +561,7 @@ body {
     /* Default: 2 kolom untuk layar kecil (mobile) */
     grid-template-columns: repeat(2, 1fr);
     gap: 16px; /* Menggantikan 'gap-4' */
-    max-width: 1920px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -770,3 +770,4 @@ body.dark-mode .contact-form textarea {
 }
 
 /*Blog*/
+
