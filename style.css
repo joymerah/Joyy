@@ -123,6 +123,7 @@ body.dark-mode .service-card {
     /* Menghapus garis pemisah yang ada pada gambar asli Anda */
     margin: 0; 
     text-decoration: none;
+    width: 100%;
 }
 
 .disqus-login-btn:hover {
@@ -773,5 +774,6 @@ body.dark-mode .contact-form textarea {
 }
 
 /*Blog*/
+
 
 
