@@ -581,7 +581,7 @@ body {
     text-align: center;
     
     /* Padding (Menggantikan 'py-8 px-10') */
-    padding: 32px 40px; 
+    padding: 32px 0px; 
     
     /* Dekorasi Box */
     background-color: white;
@@ -772,3 +772,4 @@ body.dark-mode .contact-form textarea {
 }
 
 /*Blog*/
+
