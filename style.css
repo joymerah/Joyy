@@ -66,13 +66,15 @@ body.dark-mode .service-card {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.2); /* header Latar belakang transparan ringan */
+    backdrop-filter: blur(60px); /* Efek blur untuk header latar belakang */
+    border: 1px solid #aaaaaa;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 .logo img {
-    height: 50px; /*url(logo joy newbaru.png)*/
+    height: 65px; /*url(UKURAN logo joy newbaru.png)*/
 }
 .menu-center a {
     text-decoration: none;
@@ -104,6 +106,40 @@ body.dark-mode .service-card {
     margin-left: 10px;
     color: var(--color-text-dark);
 }
+/* Styling Tombol Login Disqus */
+.auth-buttons-container {
+    display: flex;
+    gap: 10px;
+}
+.disqus-login-btn {
+    /* Membuat tombol terlihat seperti tombol login */
+    padding: 10px 20px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 8px; /* Sudut membulat */
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+    /* Menghapus garis pemisah yang ada pada gambar asli Anda */
+    margin: 0; 
+    text-decoration: none;
+}
+
+.disqus-login-btn:hover {
+    color: #ffffff;
+    background-color: #3e4243;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.disqus-login-btn:active {
+    background-color: #e8eaed;
+}
+
+.logo-icon {
+    width: 20px; /* Ukuran icon Google */
+    height: 20px;
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+}
 
 /* ---------------------------------- */
 /* 2. Hero Section */
@@ -118,6 +154,7 @@ body.dark-mode .service-card {
     color: var(--color-primary);
     min-height: 80vh;
     font-family: "Plus Jakarta Sans", sans-serif;
+    margin-bottom: 100px;
 }
 .hero-content-kiri {
     max-width: 50%;
@@ -278,6 +315,9 @@ body.dark-mode .service-card {
 @media (min-width: 768px) {
     .judul-utama {
         width: fit-content; /* Menggantikan 'md:w-fit' */
+        font-size: 30pt;
+        color: #ffffff;
+        margin-bottom: 50px;
     }
 }
 /* Kartu Diskusi (Thread) */
@@ -294,49 +334,6 @@ body {
     margin: 0 auto;
 }
 
-/* --- Header Diskusi --- */
-.discussion-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.discussion-header h1 {
-    font-size: 1.8em;
-    font-weight: 600;
-    color: #202124;
-    margin: 0;
-}
-
-.header-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.notification-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #5f6368;
-    padding: 8px;
-    border-radius: 50%;
-    transition: background-color 0.2s;
-}
-
-.start-discussion-btn {
-    background-color: #1a73e8; /* Warna Biru */
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
 /* --- Kartu Thread Utama --- */
 .thread-card {
     background-color: white;
@@ -344,6 +341,7 @@ body {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 100px;
 }
 
 .thread-header {
@@ -362,6 +360,7 @@ body {
 .user-avatar {
     width: 32px;
     height: 32px;
+    border: 1px solid #8f8f8f;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -469,8 +468,8 @@ body.dark-mode .portfolio-section {
 }
 .section-title {
     text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2rem;
+    margin-bottom: 0px;
+    font-size: 30pt;
     color: var(--color-text-dark);
 }
 body.dark-mode .section-title {
@@ -556,6 +555,7 @@ body {
     padding: 4rem 5%;
     text-align: center;
     background-color: #ffffff;
+    background-size: 1920px;
     font-family: "Plus Jakarta Sans", sans-serif;
     display: grid;
     /* Default: 2 kolom untuk layar kecil (mobile) */
@@ -566,7 +566,7 @@ body {
 }
 
 /* Media Query untuk Layar yang Lebih Besar (Menggantikan 'md:grid-cols-4') */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {  /* awalnya 768px */
     .card-grid-container {
         /* 4 kolom untuk layar menengah ke atas (desktop/tablet) */
         grid-template-columns: repeat(4, 1fr);
@@ -605,22 +605,22 @@ body {
 
 /* Hover - Newsletter (Menggantikan shadow biru) */
 .newsletter:hover {
-    box-shadow: 5px 5px 0 rgba(66, 133, 244, 1);
+    box-shadow: 5px 5px 0 #fb3654;
 }
 
 /* Hover - Instagram (Menggantikan shadow kuning) */
 .instagram:hover {
-    box-shadow: 5px 5px 0 rgba(249, 171, 0, 1);
+    box-shadow: 5px 5px 0 #3e4243;
 }
 
 /* Hover - Youtube (Menggantikan shadow merah) */
 .youtube:hover {
-    box-shadow: 5px 5px 0 rgba(234, 67, 53, 1);
+    box-shadow: 5px 5px 0 #fb3654;
 }
 
 /* Hover - Facebook (Menggantikan shadow hijau) */
 .facebook:hover {
-    box-shadow: 5px 5px 0 rgba(52, 168, 83, 1);
+    box-shadow: 5px 5px 0 #3e4243;
 }
 
 /* Styling Teks */
@@ -639,6 +639,8 @@ body {
 /* Contact Form */
 /* ---------------------------------- */
 .contact-section {
+    color: #ffffff;
+    font-size: 30pt;
     padding: 4rem 5%;
     text-align: center;
     background-color: #fb3654;
@@ -770,4 +772,3 @@ body.dark-mode .contact-form textarea {
 }
 
 /*Blog*/
-
