@@ -8,13 +8,13 @@
     <meta name="keywords" content="desain, marketplace, portofolio, branding, logo, web development, packaging, joy collection">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="iconjoy.png"> 
+    <link rel="icon" type="image/png" href="gambar/iconjoy.png"> 
 </head>
 <body class="light-mode">
     
     <header class="navbar">
         <div class="logo">
-            <img src="iconjoy.png" alt="Joy collection Logo"> 
+            <img src="gambar/iconjoy.png" alt="Joy collection Logo"> 
         </div>
         <nav class="menu-center">
             <a href="file:///E:/joy_collection_site/index.html"class="btn">Home</a>
@@ -26,64 +26,22 @@
         <div class="actions">
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website dengan Login Google di Header</title>
-    
-    <meta name="google-signin-client_id" content="101257786621-lcgd5dome8mujpc3pmu8952dmallbtu7.apps.googleusercontent.com">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-
+    <div class="navbar-actions">
+        <nav class="disqus-nav">
+        <a href="https://disqus.com/profile/login/?next=https://disqus.com/home/notifications/"
+            class="disqus-login-btn">Log in</a>
+        <a href="https://disqus.com/profile/signup/?next=https%3A//disqus.com/home/notifications/"
+            class="disqus-login-btn">Sign up</a>    
+        </nav>
+    </div>    
     <style>
-        body {
-            margin: 0;
-            font-family: plus jakarta sans, sans-serif;
-            background-color: #f4f4f4;
-        }
 
         .header {
             color: white;
-            padding: 10px 20px;
+            padding: 0px 0px; /* setelan awal 10px 20px */
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-        .login-container {
-            /* Pastikan kontainer memiliki ruang yang cukup */
-            display: flex;
-            align-items: center;
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .user-info img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-        }
-
-        .user-info span {
-            font-size: 0.9em;
-        }
-
-        /* Styling untuk tombol/div setelah login (opsional) */
-        #signout_button {
-            cursor: pointer;
-            background-color: #fb3654;
-            color: white;
-            border: 1px solid #3e4243;
-            padding: 8px 15px;
-            border-radius: 50px;
-            margin-left: 10px;
         }
     </style>
 </head>
@@ -181,7 +139,7 @@
                 </div>
             </div>
             <div class="hero-content-kanan">
-                <img src="bgjoyfamily.png" alt="Ilustrasi Mockup Desain">
+                <img src="gambar/bgjoyfamily.png" alt="Ilustrasi Mockup Desain">
             </div>
         </section>
 
@@ -207,75 +165,36 @@
 
     <div class="discussion-container">
         <header class="discussion-header">
-            <h1>Discussions</h1>
             <div class="header-actions">
-                <button class="notification-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-                </button>
-                <button class="start-discussion-btn">Start a discussion</button>
             </div>
         </header>
 
         <article class="thread-card">
             <div class="thread-header">
                 <div class="user-info">
-                    <img src="https://via.placeholder.com/32/1a73e8/ffffff?text=G" alt="GDG Logo" class="user-avatar">
+                    <img src="gambar/iconjoy.png" alt="GDG Logo" class="user-avatar">
                     <div class="user-meta">
-                        <span class="username">GDG Jakarta ID</span>
-                        <span class="time">19 hari yang lalu</span>
+                        <span class="username">Joy</span>
+                        <span class="time">26 October 2025</span>
                     </div>
                 </div>
-                <button class="pin-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.77L18.18 21L16.5 13.73L22 8.78L14.73 8.16L12 2L9.27 8.16L2 8.78L7.5 13.73L5.82 21L12 17.77Z"/></svg>
-                    Pinned
                 </button>
             </div>
 
-            <h2 class="thread-title">GDG Jakarta FAQ & Payment Policy</h2>
+            <h2 class="thread-title">Halo selamat datang</h2>
             <p class="thread-body">
-                Hi Jakarta Geeks! To ensure clarity and prevent any misunderstandings regarding our events, payments, and official communications, please carefully read our official FAQ and Payment Policy below. Official Communication ChannelsAll official information and communication from GDG Jakarta will come from our verified platforms only. Email: info@gdgjak...
+                Yuk komen dulu, kita cek ombak dulu
             </p>
-            
-            <div class="thread-actions">
-                <span class="like-btn">+</span>
-            </div>
-
             <div class="thread-footer">
 
-                <a href="#disqus_thread" class="comment-link">Comment</a>
-                <span class="options-menu">...</span>
+                <a href="file:///E:/joy_collection_site/navbar/Blog.html" class="comment-link">Comment</a>
             </div>
         </article>
-        
-        <section class="disqus-area">
-            <h3>Interaksi & Balasan Komentar</h3>
-            <div id="disqus_thread"></div>
-        </section>
-
     </div>
-
-    <script>
-        /**
-        * PENTING: EDIT DAN HILANGKAN TANDA KOMENTAR (/* dan */
-        var disqus_config = function () {
-            this.page.url = window.location.href;  
-            this.page.identifier = 'unique_id_halaman_diskusi_123'; // Ganti dengan ID unik
-        };
-        
-        (function() { // JANGAN EDIT BAGIAN INI
-        var d = document, s = d.createElement('script');
-        s.src = 'https://joy-dflidmc0lo.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
 </body>
 </html>
         
 </div>
-
     <selection class="statistics-section">
     <h2 class="section-title">Statistik Joy collection</h2>
         <div class="card-grid-container">
