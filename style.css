@@ -62,13 +62,12 @@ body.dark-mode .service-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%;
+    padding: 1rem 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.2); /* header Latar belakang transparan ringan */
+    background-color: rgba(255, 255, 255, 0.433); /* header Latar belakang transparan ringan */
     backdrop-filter: blur(60px); /* Efek blur untuk header latar belakang */
-    border: 1px solid #aaaaaa;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -106,6 +105,7 @@ body.dark-mode .service-card {
     margin-left: 10px;
     color: var(--color-text-dark);
 }
+
 /* Styling Tombol Login Disqus */
 .auth-buttons-container {
     display: flex;
@@ -141,6 +141,81 @@ body.dark-mode .service-card {
     height: 20px;
     margin-right: 8px; /* Jarak antara ikon dan teks */
 }
+
+
+/* ========== HAMBURGER ICON ========== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background-color: var(--color-text-dark);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* Animasi saat menu aktif */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .menu-center {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.433); /* header Latar belakang transparan ringan */
+        backdrop-filter: blur(60px); /* Efek blur untuk header latar belakang */
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        padding: 15px 0;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .menu-center a {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .menu-center.active {
+        display: flex;
+    }
+
+    /* Tampilkan hamburger di HP */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Sembunyikan menu dan tombol login di HP */
+    .menu-center,
+    .actions {
+        display: none;
+    }
+
+    /* Tampilkan menu saat aktif */
+    .menu-center.active,
+    .actions.active {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 
 /* ---------------------------------- */
 /* 2. Hero Section */
@@ -694,39 +769,86 @@ body.dark-mode .contact-form textarea {
 /* 6. Footer */
 /* ---------------------------------- */
 .footer {
-    background-color: var(--color-whatsapp-dark-footer); /* Hijau Tua ala Footer WhatsApp API */
-    color: #aebac1;
-    padding: 3rem 5%;
-    text-align: center;
-    font-family: "Plus Jakarta Sans", sans-serif;
+    background: #3d4143;
+    color: white;
+    padding: 50px 40px;
+    font-family: 'Inter', sans-serif;
 }
-.footer-content {
+
+.footer-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #fb3654;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
 }
-.footer-logo img {
-    height: 50px;
+
+.footer-section h3 {
+    font-size: 15px;
+    margin-bottom: 15px;
+    font-weight: 500;
 }
-.social-links a {
-    color: #aebac1;
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 2px;
+}
+
+.footer-section ul li a {
+    color: #e8e8e8;
     text-decoration: none;
-    margin-left: 20px;
-    font-weight: 400;
-    transition: color 0.3s;
+    font-size: 13px;
 }
-.social-links a:hover {
-    color: var(--color-cta-green-hover);
+
+.footer-section ul li a:hover {
+    color: #ff5263;
 }
-.social-links i {
-    margin-right: 5px;
+
+.footer-logo {
+    width: 200px;
 }
-.footer-bottom-text {
-    font-size: 0.9rem;
+
+.support-logo {
+    display: block;
+    width: 150px;
+    margin-bottom: 15px;
 }
+
+.footer-line {
+    width: 100%;
+    height: 3px;
+    background: #ff5263;
+    margin-top: 40px;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin: 0 auto;
+    }
+
+    .support-logo {
+        margin: 10px auto;
+    }
+}
+
 
 /* ---------------------------------- */
 /* Mobile First Responsiveness */
@@ -774,6 +896,3 @@ body.dark-mode .contact-form textarea {
 }
 
 /*Blog*/
-
-
-
