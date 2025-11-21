@@ -92,3 +92,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+/* Catatan: BLOG JOY*/
+const wrapper = document.querySelector('.cards-wrapper');
+const cards = document.querySelectorAll('.card');
+const dots = document.querySelectorAll('.dot');
+const prev = document.querySelector('.nav-button.left');
+const next = document.querySelector('.nav-button.right');
+let currentIndex = 1;
+
+function updateCarousel() {
+  wrapper.style.transform = `translateX(-${(currentIndex - 1) * 340}px)`;
+  cards.forEach((card, i) => {
+    card.classList.toggle('active', i === currentIndex - 1);
+  });
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentIndex - 1);
+  });
+}
+
+prev.addEventListener('click', () => {
+  currentIndex = currentIndex > 1 ? currentIndex - 1 : cards.length;
+  updateCarousel();
+});
+
+next.addEventListener('click', () => {
+  currentIndex = currentIndex < cards.length ? currentIndex + 1 : 1;
+  updateCarousel();
+});
+
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    currentIndex = i + 1;
+    updateCarousel();
+  });
+});
+
+updateCarousel();
+
+
+/* ICON HUMBERGER*/
