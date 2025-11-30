@@ -1,60 +1,3 @@
-/* Variabel Warna WhatsApp/Joy Collection */
-:root {
-    /* Warna WhatsApp API */
-    --color-whatsapp-green-grad-start: #fb3654; 
-    --color-whatsapp-green-grad-end: #fb3654;
-    --color-whatsapp-dark-footer: #222e35;
-    
-    /* Warna Brand Joy Collection */
-    --color-primary: #ffffff; /* Putih (untuk background atau teks) */
-    --color-secondary: #fb3654; /* Merah Muda */
-    --color-text-dark: #3e4243; /* Abu-abu Tua */
-    --color-cta-green: #3e4243; /* Hijau CTA WhatsApp */
-    --color-cta-green-hover: #fb3654; 
-    
-    /* Mode Gelap */
-    --dark-bg: #111b21;
-    --dark-text: #e9edef;
-    --dark-card-bg: #222e35;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    color: var(--color-text-dark);
-    line-height: 1.6;
-    background-color: var(--color-primary);
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* ---------------------------------- */
-/* Dark Mode */
-/* ---------------------------------- */
-body.dark-mode {
-    background-color: var(--dark-bg);
-    color: var(--dark-text);
-}
-body.dark-mode .navbar {
-    background-color: var(--dark-bg);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-body.dark-mode .navbar a, 
-body.dark-mode .actions button {
-    color: var(--dark-text);
-}
-body.dark-mode .design-card,
-body.dark-mode .service-card {
-    background-color: var(--dark-card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-/* ... Tambahkan gaya dark mode untuk semua elemen ... */
-
-
 /* ---------------------------------- */
 /* 1. Navbar */
 /* ---------------------------------- */
@@ -62,17 +5,18 @@ body.dark-mode .service-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%;
+    padding: 1rem 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--color-primary);
+    background-color: rgba(255, 255, 255, 0.433); /* header Latar belakang transparan ringan */
+    backdrop-filter: blur(60px); /* Efek blur untuk header latar belakang */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 .logo img {
-    height: 50px; /*url(logo joy newbaru.png)*/
+    height: 65px; /*url(UKURAN logo joy newbaru.png)*/
 }
 .menu-center a {
     text-decoration: none;
@@ -105,6 +49,117 @@ body.dark-mode .service-card {
     color: var(--color-text-dark);
 }
 
+/* Styling Tombol Login Disqus */
+.auth-buttons-container {
+    display: flex;
+    gap: 10px;
+}
+.disqus-login-btn {
+    /* Membuat tombol terlihat seperti tombol login */
+    padding: 10px 20px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 8px; /* Sudut membulat */
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+    /* Menghapus garis pemisah yang ada pada gambar asli Anda */
+    margin: 0; 
+    text-decoration: none;
+    width: 100%;
+}
+
+.disqus-login-btn:hover {
+    color: #ffffff;
+    background-color: #3e4243;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.disqus-login-btn:active {
+    background-color: #e8eaed;
+}
+
+.logo-icon {
+    width: 20px; /* Ukuran icon Google */
+    height: 20px;
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+}
+
+
+/* ========== HAMBURGER ICON ========== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background-color: var(--color-text-dark);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* Animasi saat menu aktif */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .menu-center {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.433); /* header Latar belakang transparan ringan */
+        backdrop-filter: blur(60px); /* Efek blur untuk header latar belakang */
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        padding: 15px 0;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .menu-center a {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .menu-center.active {
+        display: flex;
+    }
+
+    /* Tampilkan hamburger di HP */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Sembunyikan menu dan tombol login di HP */
+    .menu-center,
+    .actions {
+        display: none;
+    }
+
+    /* Tampilkan menu saat aktif */
+    .menu-center.active,
+    .actions.active {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
 /* ---------------------------------- */
 /* 2. Hero Section */
 /* ---------------------------------- */
@@ -118,6 +173,7 @@ body.dark-mode .service-card {
     color: var(--color-primary);
     min-height: 80vh;
     font-family: "Plus Jakarta Sans", sans-serif;
+    margin-bottom: 100px;
 }
 .hero-content-kiri {
     max-width: 50%;
@@ -175,413 +231,459 @@ body.dark-mode .service-card {
     border: 1px solid #ffffff;
 }
 
-/* ---------------------------------- */
-/* 3. Update terbaru teNTANG Joy */
-/* ---------------------------------- */
-/* Animasi untuk scroll reveal akan ditambahkan di JS */
-
-/* Styling untuk Container (Menggantikan 'text-center space-y-4 flex flex-col items-center') */
-.container-pusat {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Memusatkan elemen horizontal */
-    text-align: center; /* Memastikan teks di dalamnya terpusat */
-    gap: 16px; /* Menggantikan 'space-y-4' (asumsi 16px) */
-    padding: 20px;
-    font-family: "Plus Jakarta Sans", sans-serif; /* Opsional: tentukan font */
-}
-
-/* Styling untuk Judul Utama (Menggantikan 'h2' dengan semua properti kompleks) */
-.judul-utama {
-    /* Ukuran & Tata Letak */
-    width: 83.333333%; /* Menggantikan 'w-5/6' */
-    max-width: fit-content; /* Untuk memastikan width mengecil di layar besar, menggantikan 'md:w-fit' */
-    padding: 16px; /* Menggantikan 'p-4' */
+/* Variabel Warna WhatsApp/Joy Collection */
+:root {
+    /* Warna WhatsApp API */
+    --color-whatsapp-green-grad-start: #fb3654;
+    --color-whatsapp-green-grad-end: #fb3654;
+    --color-whatsapp-dark-footer: #222e35;
     
-    /* Dekorasi Box */
-    border: 1px solid #3f3f46; /* Menggantikan 'border border-zinc-800' */
-    background-color: #ff5a72; /* Menggantikan 'bg-sky-200' */
-    border-radius: 12px; /* Menggantikan 'rounded-xl' */
+    /* Warna Brand Joy Collection */
+    --color-primary: #ffffff; /* Putih (untuk background atau teks) */
+    --color-secondary: #fb3654; /* Merah Muda */
+    --color-text-dark: #3e4243; /* Abu-abu Tua */
+    --color-cta-green: #3e4243;
+    --color-cta-green-hover: #fb3654; 
     
-    /* Efek & Transisi */
-    position: relative; /* Wajib untuk penempatan ::before/::after */
-    transition: all 0.3s ease-in-out; /* Menggantikan 'transition-all' dan 'hover:px-8' */
+    /* Mode Gelap */
+    --dark-bg: #111b21;
+    --dark-text: #e9edef;
+    --dark-card-bg: #222e35;
 }
 
-/* Efek Hover untuk Judul */
-.judul-utama:hover {
-    padding-left: 32px; /* Menggantikan 'hover:px-8' (asumsi 32px = 8 * 4px) */
-    padding-right: 32px; /* Menggantikan 'hover:px-8' (asumsi 32px = 8 * 4px) */
-}
+/* Menggunakan font Inter untuk blog dan font Plus Jakarta Sans untuk body/navbar */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* ---------------------------------------------------- */
-/* Dekorasi Kiri (Menggantikan '::before' yang kompleks) */
-/* ---------------------------------------------------- */
-.judul-utama::before {
-    content: '';
-    position: absolute;
-    width: 28px; /* Menggantikan 'w-7' (asumsi 28px = 7 * 4px) */
-    height: 100%;
-    border: 1px solid #3f3f46;
-    left: -28px; /* Menggantikan '-left-7' */
-    top: 0;
-    border-radius: 12px;
-    background-color: #fb3654; /* Menggantikan 'bg-sky-400' */
-    transition: all 0.3s ease-in-out; /* Menggantikan 'transition-all' */
-    z-index: -1; /* Pastikan dekorasi di belakang teks h2 */
-}
-
-/* Efek Hover pada Dekorasi Kiri */
-.judul-utama:hover::before {
-    height: 66.6666%; /* Menggantikan 'hover:before:h-2/3' */
-    top: 50%; /* Pindahkan ke tengah agar efeknya dari bawah ke atas */
-    transform: translateY(-50%);
-}
-
-/* ----------------------------------------------------- */
-/* Dekorasi Kanan (Menggantikan '::after' yang kompleks) */
-/* ----------------------------------------------------- */
-.judul-utama::after {
-    content: '';
-    position: absolute;
-    width: 28px; /* Menggantikan 'w-7' */
-    height: 100%;
-    border: 1px solid #3f3f46;
-    right: -28px; /* Menggantikan '-right-7' */
-    bottom: 0;
-    border-radius: 12px;
-    background-color: #fb3654; /* Menggantikan 'bg-sky-400' */
-    transition: all 0.3s ease-in-out; /* Menggantikan 'transition-all' */
-    z-index: -1; /* Pastikan dekorasi di belakang teks h2 */
-}
-
-/* Efek Hover pada Dekorasi Kanan */
-.judul-utama:hover::after {
-    height: 66.6666%; /* Menggantikan 'hover:after:h-2/3' */
-    bottom: 50%; /* Pindahkan ke tengah agar efeknya dari atas ke bawah */
-    transform: translateY(50%);
-}
-
-/* Styling untuk teks lain */
-.sub-judul {
-    margin-top: 0;
-    font-size: 1.5em;
-    color: #333;
-}
-
-.tanggal {
-    color: #666;
-    font-size: 1.1em;
-}
-
-/* Media Query untuk Layar yang Lebih Besar (Opsional, untuk responsif) */
-@media (min-width: 768px) {
-    .judul-utama {
-        width: fit-content; /* Menggantikan 'md:w-fit' */
-    }
-}
-/* Kartu Diskusi (Thread) */
-/* Kartu Diskusi (Thread) */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f7f7;
+* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
-.discussion-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* --- Header Diskusi --- */
-.discussion-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.discussion-header h1 {
-    font-size: 1.8em;
-    font-weight: 600;
-    color: #202124;
-    margin: 0;
-}
-
-.header-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.notification-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #5f6368;
-    padding: 8px;
-    border-radius: 50%;
-    transition: background-color 0.2s;
-}
-
-.start-discussion-btn {
-    background-color: #1a73e8; /* Warna Biru */
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-/* --- Kartu Thread Utama --- */
-.thread-card {
-    background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.thread-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 15px;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.user-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.user-meta {
-    display: flex;
-    flex-direction: column;
-}
-
-.username {
-    font-weight: 600;
-    color: #202124;
-    font-size: 0.95em;
-}
-
-.time {
-    font-size: 0.8em;
-    color: #5f6368;
-}
-
-.thread-title {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: #202124;
-    margin: 0 0 10px 0;
-}
-
-.thread-body {
-    font-size: 1em;
-    color: #5f6368;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-.thread-actions {
-    padding-left: 42px; /* Sejajarkan dengan tepi teks */
-    margin-bottom: 15px;
-}
-
-.like-btn {
-    font-size: 1.5em;
-    color: #5f6368;
-    cursor: pointer;
-    display: inline-block;
-    padding: 0 5px;
-}
-
-.thread-footer {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    border-top: 1px solid #eee;
-    padding-top: 15px;
-    font-size: 0.9em;
-    color: #5f6368;
-}
-
-.comment-link {
-    color: #1a73e8;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* --- Area Disqus --- */
-.disqus-area {
-    margin-top: 30px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.disqus-area h3 {
-    font-size: 1.4em;
-    color: #202124;
-    margin-top: 0;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-
-/* Styling Global dan Container */
 body {
-    background-color: #ffffff; /* Latar belakang abu-abu muda */
-    padding: 0px; /* JANGAN DIHAPUS KOCAK */
-}
-
-/* ---------------------------------- */
-/* Contact Form */
-/* ---------------------------------- */
-.contact-section {
-    padding: 4rem 5%;
-    text-align: center;
-    background-color: #fb3654;
     font-family: "Plus Jakarta Sans", sans-serif;
-}
-body.dark-mode .contact-section {
-    background-color: var(--dark-card-bg);
-}
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: grid;
-    gap: 20px;
-    margin-top: 30px;
-}
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-    background-color: var(--color-primary);
     color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: var(--color-primary);
+    transition: background-color 0.3s, color 0.3s;
 }
-body.dark-mode .contact-form input,
-body.dark-mode .contact-form textarea {
+
+/* ---------------------------------- */
+/* Dark Mode */
+/* ---------------------------------- */
+body.dark-mode {
     background-color: var(--dark-bg);
     color: var(--dark-text);
-    border-color: #444;
 }
-.contact-form textarea {
-    resize: vertical;
-    min-height: 150px;
+body.dark-mode .navbar {
+    background-color: var(--dark-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--color-cta-green);
-    outline: none;
+body.dark-mode .navbar a, 
+body.dark-mode .actions button {
+    color: var(--dark-text);
 }
-.contact-form .cta-primary {
-    justify-self: end;
-    width: auto;
+body.dark-mode .design-card,
+body.dark-mode .service-card {
+    background-color: var(--dark-card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* ... Tambahkan gaya dark mode untuk semua elemen ... */
+
+
+/* ---------------------------------- */
+/* 1. Navbar */
+/* ---------------------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.433); /* header Latar belakang transparan ringan */
+    backdrop-filter: blur(60px); /* Efek blur untuk header latar belakang */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.logo img {
+    height: 65px; /*url(UKURAN logo joy newbaru.png)*/
+}
+.menu-center a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    margin: 0 15px;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+}
+.menu-center a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-secondary);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+.menu-center a:hover::after {
+    width: 100%;
+}
+.actions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 10px;
+    color: var(--color-text-dark);
+}
+
+/* Styling Tombol Login Disqus */
+.auth-buttons-container {
+    display: flex;
+    gap: 10px;
+}
+.disqus-login-btn {
+    /* Membuat tombol terlihat seperti tombol login */
+    padding: 10px 20px;
+    color: black;
+    border: 1px solid black;
+    border-radius: 8px; /* Sudut membulat */
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+    /* Menghapus garis pemisah yang ada pada gambar asli Anda */
+    margin: 0; 
+    text-decoration: none;
+    width: 100%;
+}
+
+.disqus-login-btn:hover {
+    color: #ffffff;
+    background-color: #3e4243;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.disqus-login-btn:active {
+    background-color: #e8eaed;
+}
+
+.logo-icon {
+    width: 20px; /* Ukuran icon Google */
+    height: 20px;
+    margin-right: 8px; /* Jarak antara ikon dan teks */
+}
+
+
+/* ========== HAMBURGER ICON ========== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background-color: var(--color-text-dark);
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+/* Animasi saat menu aktif */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .menu-center {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.433); /* header Latar belakang transparan ringan */
+        backdrop-filter: blur(60px); /* Efek blur untuk header latar belakang */
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        padding: 15px 0;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .menu-center a {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .menu-center.active {
+        display: flex;
+    }
+
+    /* Tampilkan hamburger di HP */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Sembunyikan menu dan tombol login di HP */
+    .menu-center,
+    .actions {
+        display: none;
+    }
+
+    /* Tampilkan menu saat aktif */
+    .menu-center.active,
+    .actions.active {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* ---------------------------------- */
+/* Gaya Blog & Pencarian */
+/* ---------------------------------- */
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin: 20px auto; /* Menengahkan container blog */
+}
+
+/* Gaya Kotak Pencarian */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #ff0055;
+    border-radius: 10px;
+    padding: 5px 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+
+.search-box i.fa-search {
+    color: #666;
+    margin-right: 10px;
+}
+
+#searchInput {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 10px 0;
+    font-family: 'Inter', sans-serif; /* Menggunakan font Inter untuk input */
+}
+
+.clear-button {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.clear-button:hover {
+    color: #666;
+}
+
+/* Gaya Hasil Pencarian */
+.blog-result {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: none; /* Awalnya disembunyikan */
+    font-family: "Plus Jakarta Sans", sans-serif; /* Menggunakan font Inter untuk hasil blog */
+}
+
+.blog-result h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 0;
+}
+
+.blog-result p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.blog-result .date {
+    display: flex;
+    align-items: center;
+    color: #333333;
+    font-size: 16px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 350,
+    'GRAD' 0,
+    'opsz' 10;
+    font-size: 10px;
+    opacity: 0.8;
+    color: #333333;
+    margin-right: 5px;
+}
+
+/* Tombol */
+.btn {
+    background-color: transparent;
+    color: #fb3654;
+    border: 2px solid #fb3654;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #fb3654;
+    color: white;
+    box-shadow: 0 2px 5px rgba(255, 0, 85, 0.4);
+}
+
+/* Not Found */
+#notFoundMessage {
+    text-align: center;
+    padding: 50px 0;
+    display: none;
+}
+
+#notFoundMessage .illustration {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto 30px;
+}
+
+#notFoundMessage h2 {
+    font-size: 22px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+#notFoundMessage p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    background-color: #fb3654;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.back-button:hover {
+    background-color: #fb3654;
+    transform: translateY(-1px);
+}
+/* Style tambahan */
+.header {
+    color: white;
+    padding: 0px 0px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
 /* 6. Footer */
 /* ---------------------------------- */
 .footer {
-    background-color: var(--color-whatsapp-dark-footer); /* Hijau Tua ala Footer WhatsApp API */
-    color: #aebac1;
-    padding: 3rem 5%;
-    text-align: center;
+    background: #3d4143;
+    color: white;
+    padding: 50px 40px;
     font-family: "Plus Jakarta Sans", sans-serif;
+    margin-top: 100px;
 }
-.footer-content {
+
+.footer-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #fb3654;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
 }
-.footer-logo img {
-    height: 50px;
+
+.footer-section h3 {
+    font-size: 15px;
+    margin-bottom: 15px;
+    font-weight: 500;
 }
-.social-links a {
-    color: #aebac1;
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 2px;
+}
+
+.footer-section ul li a {
+    color: #e8e8e8;
     text-decoration: none;
-    margin-left: 20px;
-    font-weight: 400;
-    transition: color 0.3s;
-}
-.social-links a:hover {
-    color: var(--color-cta-green-hover);
-}
-.social-links i {
-    margin-right: 5px;
-}
-.footer-bottom-text {
-    font-size: 0.9rem;
+    font-size: 13px;
 }
 
-/* ---------------------------------- */
-/* Mobile First Responsiveness */
-/* ---------------------------------- */
-@media (max-width: 992px) {
-    .hero-section {
-        flex-direction: column;
-        text-align: center;
-        font-family: "Plus Jakarta Sans", sans-serif;
-    }
-    .hero-content-kiri,
-    .hero-content-kanan {
-        max-width: 100%;
-        margin-bottom: 3rem;
-    }
-    .hero-content-kanan img {
-        transform: none; /* Hilangkan efek 3D di mobile */
-    }
-    .hero-content-kiri h1 {
-        font-size: 2.5rem;
-    }
-    .menu-center {
-        display: none; /* Sembunyikan menu navigasi di mobile */
-    }
-    .design-grid,
-    .services-grid {
-        grid-template-columns: 1fr; /* Satu kolom di mobile */
-    }
-    .portfolio-item.clean-style {
-        flex-direction: column;
-    }
-    .item-media,
-    .item-description {
-        max-width: 100%;
-    }
-    .item-media img {
-        height: 250px;
-    }
-    .footer-content {
-        flex-direction: column;
-    }
-    .social-links {
-        margin-top: 20px;
-    }
+.footer-section ul li a:hover {
+    color: #fb3654;
 }
 
-/*Blog*/
+.footer-logo {
+    width: 200px;
+}
+
+.support-logo {
+    display: block;
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-line {
+    width: 100%;
+    height: 3px;
+    background: #fb3654;
+    margin-top: 40px;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+}
